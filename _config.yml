@@ -1,7 +1,7 @@
 # Site
-title:              Massively
-bio:                'Jekyll version of the Massively theme by HTML5UP'
-description:        "Jekyll version of the Massively theme by HTML5UP"
+title:              Brian Lee
+bio:                'This is the bio section of the page'
+description:        'Description line...' 
 locale:             en_US
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://poomstas.github.io/" # the base hostname & protocol for your site
@@ -17,9 +17,9 @@ instagram:          default
 github:             default
 
 # personal
-location:           Los Angeles, CA
-phone:              310-318-5555
-email:              info@default.com # change this to your email to receive free emails for your contact submissions via Slapform.com
+location:           Seoul, South Korea
+phone:              82-10-3368-6481
+email:              b.lee@utexas.edu
 
 # Other
 background_image:   /images/bg.jpg
