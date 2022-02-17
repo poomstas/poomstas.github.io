@@ -7,9 +7,7 @@ image: "/images/Agriculture.jpg"
 
 ---
 
-# Deep Reinforcement Learning + Agricultural Tech
-
-## Problem Statement and Overview
+### Problem Statement and Overview
 
 The objective of this project is to find the optimum combination of 13 continuous control (action) variables through time to maximize wheat's crop yield. The crop yield is estimated using the `PCSE-v0` crop simulator provided in [this link](https://github.com/poomstas/spwk-agtech-task.git). 
 
@@ -83,7 +81,7 @@ The model follows a markov decision process (MDP) frameowrk, with 11 observation
 
 
 
-## Executive Summary
+### Executive Summary
 
 Three reinforcement learning techniques were used to maximize the total episodic reward: DDPG, TD3 and SAC. I have selected these methods primarily because they:
 
@@ -146,11 +144,11 @@ The hyperparameters used to train the SAC model is summarized in the table below
 
 The subsequent sections details the attempts in the order they were made.
 
-# Trial #1: Deep Deterministic Policy Gradient (DDPG)
+## Trial #1: Deep Deterministic Policy Gradient (DDPG)
 
 
 
-## Algorithm
+### Algorithm
 
 The first algorithm used was Deep Deterministic Policy Gradient (DDPG). DDPG is a deep reinforcement learning technique that draws from both Q-learning and policy gradients. One of the motives for creating DDPG was that Deep Q-Network (DQN) could only handle cases where the action spaces were discrete and low-dimensional. This was the primary basis for selecting DDPG as my first attempt to solve the problem, which involves a continuous action variable.
 
@@ -169,14 +167,14 @@ The overview of the DDPG algorithm in the form of pseudocode is provided below.
 
 
 
-## Implementation & Results
+### Implementation & Results
 
-### Plateau Detection
+#### Plateau Detection
 
 To ensure that the training algorithm (applied to all three algorithms) does not continue running indefinitely, I have implemented a simple plateau detection. The algorithm calculates the mean reward values of the most recent n (default set at 100) values and the most recent 2n values. If the difference is less than 0.1%, then the training is assumed to have reached a plateau, and is terminated. The implementation can be found in a function called `has_plateaued`.
 
 
-### Grid-Based Hyperparameter Search
+#### Grid-Based Hyperparameter Search
 
 Several references have mentioned that DDPG is known to be sensitive to hyperparameters (Duan et al., 2016 and Henderson et al., 2017), and accordingly, a hyperparameter search algorithm was implemented. The configuration for the grid-based hyperparameter search is summarized in the table below.
 
@@ -210,9 +208,9 @@ The results are subpar. With the exception of very few spikes in the `episode_re
 At this stage, I have determined that it may be more time-efficient to try out an improved algorithm than to try to find higher-performing hyperparameter sets.
 
 
-# Trial # 2: Twin-Delayed Deep Deterministic Policy Gradient (TD3)
+## Trial # 2: Twin-Delayed Deep Deterministic Policy Gradient (TD3)
 
-## Algorithm
+### Algorithm
 
 Twin-Delayed Deep Deterministic Policy Gradient (TD3) is an off-policy algorithm that is also designed to be used for environments with continuous action spaces. TD3 attempts to improve upon the problem of overestimation bias in the DDPG algorithm. It does so by learning two Q-functions (as opposed to one, as in DDPG), and uses the smaller of the two Q-values to use as targets in calculating the loss functions. 
 
@@ -230,7 +228,7 @@ Using the above modifications have effectively addressed the value overestimatio
 
 
 
-## Implementation & Results
+### Implementation & Results
 
 In a fashion similar to how DDPG was approached, plateau detection and grid-based hyperparameter search was conducted. The grid-based hyperparameter search configuration is summarized in the table below.
 
@@ -273,9 +271,9 @@ Securing a positive reward, which I was not able to with DDPG, is an improvement
 Given that the TD3 experiments above are conducted rather sparsely, I suspect (in retrospect) that TD3’s results may benefit from additional hyperparameter tuning in a search density similar to or greater than that of SAC.
 
 
-# Trial # 3: Soft Actor-Critic (SAC)
+## Trial # 3: Soft Actor-Critic (SAC)
 
-## Algorithm
+### Algorithm
 
 The Soft Actor-Critic (SAC) model takes a more general form than TD3. In fact, removing stochasticity from SAC gives a model formulation identical to that of TD3.
 
@@ -288,7 +286,7 @@ The SAC algorithm’s pseudocode is provided below for reference.
 <img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/K.png" style="zoom:67%;" />
 
 
-## Implementation & Results
+### Implementation & Results
 
 Below are the results of training using varying sets of hyperparameters. The number of curves on the graph below coincide with that of the combinations of hyperparameters selected for this study. Each dot on the curve represents a completed episode of the simulation run.
 
@@ -350,19 +348,19 @@ It seems that the optimal reward scale value is approximately 13 to 19, while th
 
 The above results can be reproduced by running the `check_best_performing_action.py` script. 
 
-# Conclusion
+## Conclusion
 
 In this work, I was find the set of control variables for the PCSE crop simulation that maximizes the net profit. Three algorithms (DDPG, TD3, and SAC) were employed to solve the problem, and the results were compared to determine which approach yields the best results. Among the three, the SAC gave the most profitable result, with `$2802/ha`, and is selected as the final recommendation. SAC algorithm’s use of stochastic policies, off-policy formulation, replay buffer, and entropy regularization have allowed a stable and sample-efficient training, which resulted in the best final result.
 
 
-# Future Works
+## Future Works
 
 - In the above work, more time was spent trying out hyperparameter sets for SAC than DDPG and TD3. Although the SAC is known to be more efficient (Haarnoja et al., 2018), DDPG and TD3 may yield better results (compared to what was observed) with the right hyperparameters, and may be worth an investigation. 
 - There are a number of notable developments since SAC, such as transformer-based models. It should be interesting to learn more about the newly developed models and compare their performances against the ones studied in this work.
 - Use a more advanced method for hyperparameter search in the place of grid-based approach. Potential candidates are: latin hypercube sampling, Bayesian optimization, infinite-armed bandit-based approach, etc.
 - Because one of the objectives is to find the set of actions that yield the best reward, it may be helpful to keep track of the best reward and save the corresponding action set while the training is proceeding. In a few cases I seem to have lost some high-performing models ($2800+/ha) due to the absence of a timely saving feature.
 
-# References
+## References
 
 - Haarnoja T., Zhou, A., Abbeel P., & Levine S. (2018) Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor.
 - Duan, Y., Chen, X., Houthooft, R., Schulman, J., and Abbeel, P. (2016) Benchmarking deep reinforcement learning for continuous control. In *International Conference on Machine Learning (ICML)*
@@ -374,9 +372,9 @@ In this work, I was find the set of control variables for the PCSE crop simulati
 
 ------------------
 
-# Running the Scripts
+## Running the Scripts
 
-## Create a Conda Environment
+### Create a Conda Environment
 
 ```
 conda create --name AgTech_DRL python=3.8
@@ -390,9 +388,9 @@ conda install matplotlib
 
 
 
-## Running the Training Scripts
+### Running the Training Scripts
 
-### The main training scripts in each folder begin with `main`. 
+#### The main training scripts in each folder begin with `main`. 
 
 `main_train_ddpg.py` for DDPG
 
@@ -401,7 +399,7 @@ conda install matplotlib
 `main_train_sac.py` for SAC
 
 
-### Specifying Hyperparameters
+#### Specifying Hyperparameters
 
 When running the training scripts, hyperparameters can be specified. For instance:
 
@@ -413,7 +411,7 @@ To see which hyperparameters can be specified, run:
 
 
 
-## Check Best-Performing Action Set
+### Check Best-Performing Action Set
 
 To visualize the results of the best-performing action set (acquired by training an SAC model), run:
 
@@ -421,7 +419,7 @@ To visualize the results of the best-performing action set (acquired by training
 
 
 
-## Load the Best Trained SAC Model and Test
+### Load the Best Trained SAC Model and Test
 
 To load the best-case SAC model, run multiple episodes on the given environment and calculate the average and maximum episode rewards,
 run the following:
