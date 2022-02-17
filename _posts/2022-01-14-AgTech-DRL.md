@@ -119,7 +119,7 @@ Because the SAC algorithm is inherently stochastic, it gives different results e
 
 **Figure: Distribution of Total Episodic Rewards Retrieved from 1,000 Episodes**
 
-<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" alt="SAC Model Performance" style="zoom: 67%;" />
+<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" alt="SAC Model Performance"  align="center" style="zoom:67%;" />
 
 
 The hyperparameters used to train the SAC model is summarized in the table below:
@@ -156,7 +156,7 @@ DDPG learns a Q-function and a policy simultaneously, and uses off-policy data a
 
 DDPG overcomes the above limitation by taking advantage of the fact that when the action space is continuous, the (optimal) action-value function is differentiable with respect to the action variable. Using this, a gradient-based learning rule for a policy can be constructed, as below.
 
-![DDPG Main Equation](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/AB.png)
+<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/AB.png" alt="DDPG Main Equation" style="zoom:67%;" align="center"/>
 
 
 The gradient values are then used to update the Q-function and the policy. Here, soft-updating is used to ensure that the updating procedure retains some stability.
