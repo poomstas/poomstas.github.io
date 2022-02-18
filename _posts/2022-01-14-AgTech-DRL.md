@@ -3,7 +3,7 @@ layout: post
 title:  "Deep Reinforcement Learning + AgTech"
 date:   2022-01-14
 excerpt: "Optimizing growth conditions using a crop simulator and Deep Reinforcement Learning (DRL)"
-image: "/images/Agriculture.jpg"
+image: "/images/Agriculture.jpeg"
 
 ---
 
@@ -119,12 +119,11 @@ Because the SAC algorithm is inherently stochastic, it gives different results e
 
 **Figure: Distribution of Total Episodic Rewards Retrieved from 1,000 Episodes**
 
-<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" alt="SAC Model Performance"  align="center" style="zoom:67%;" />
+<center>!<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" style="zoom:67%;" /></center>
+
 
 
 The hyperparameters used to train the SAC model is summarized in the table below:
-
-
 
 **Table: Hyperparameters Used to Train the Final Selected Model (SAC)**
 
@@ -156,14 +155,14 @@ DDPG learns a Q-function and a policy simultaneously, and uses off-policy data a
 
 DDPG overcomes the above limitation by taking advantage of the fact that when the action space is continuous, the (optimal) action-value function is differentiable with respect to the action variable. Using this, a gradient-based learning rule for a policy can be constructed, as below.
 
-<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/AB.png" alt="DDPG Main Equation" style="zoom:67%;" align="center"/>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/AB.png" alt="DDPG Main Equation" style="zoom:67%;" /></center>
 
 
 The gradient values are then used to update the Q-function and the policy. Here, soft-updating is used to ensure that the updating procedure retains some stability.
 
 The overview of the DDPG algorithm in the form of pseudocode is provided below.
 
-![DDPG Algorithm Pseudocode](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/B.png)
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/B.png" alt="DDPG Algorithm Pseudocode" style="zoom:67%;" /></center>
 
 
 
