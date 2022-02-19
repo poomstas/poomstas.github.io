@@ -162,7 +162,7 @@ The gradient values are then used to update the Q-function and the policy. Here,
 
 The overview of the DDPG algorithm in the form of pseudocode is provided below.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/B.png" alt="DDPG Algorithm Pseudocode" style="zoom:67%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/B.png" alt="DDPG Algorithm Pseudocode" style="zoom:80%;" /></center>
 
 
 
@@ -195,12 +195,13 @@ Several references have mentioned that DDPG is known to be sensitive to hyperpar
 
 The graphs below show the training results using the above hyperparameter set configurations. 
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/C.png)
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/C.png" alt="DDPG Algorithm Pseudocode" style="zoom:80%;" /></center>
+
+
 
 `last_100_reward_avg` is the moving window average of the last 100 rewards. It is used to smooth out the noise of the graph above.
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/D.png)
-
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/D.png" alt="DDPG Algorithm Pseudocode" style="zoom:80%;" /></center>
 
 The results are subpar. With the exception of very few spikes in the `episode_reward`, none of the episode runs have achieved net positive return/profit. According to Fujimoto et al. (2018), there is inherently an overestimation bias in Actor-Critic methods where the policy is updated using a deterministic policy gradient, leading to biased--and thus suboptimal--policies. 
 
