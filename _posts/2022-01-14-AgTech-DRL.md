@@ -290,12 +290,12 @@ The SAC algorithm’s pseudocode is provided below for reference.
 
 Below are the results of training using varying sets of hyperparameters. The number of curves on the graph below coincide with that of the combinations of hyperparameters selected for this study. Each dot on the curve represents a completed episode of the simulation run.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/L.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/L.png" alt="" style="max-width:100%;" /></center>
 
 
 `best_reward_so_far` graph visualizes the maximum episodic total reward gained from an episode as the SAC algorithm proceeds with the training. As expected, the graphs are monotonically increasing.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/M.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/M.png" alt="" style="max-width:100%;" /></center>
 
 Maximum one-time reward value from ‘best_reward_so_far’ graph is $2862/ha, and the unique identifier/name for the trial is:
 
