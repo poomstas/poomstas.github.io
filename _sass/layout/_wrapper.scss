@@ -58,7 +58,7 @@
 
 		@include orientation(portrait) {
 			> .bg {
-				background-size:	auto,								auto,														auto 100%;
+				background-size:	auto, auto, 100%, auto;
 			}
 		}
 	}
