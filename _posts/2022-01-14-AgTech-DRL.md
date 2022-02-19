@@ -119,7 +119,7 @@ Because the SAC algorithm is inherently stochastic, it gives different results e
 
 **Figure: Distribution of Total Episodic Rewards Retrieved from 1,000 Episodes**
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" style="max-width:100%;" /></center>
 
 
 
@@ -155,14 +155,14 @@ DDPG learns a Q-function and a policy simultaneously, and uses off-policy data a
 
 DDPG overcomes the above limitation by taking advantage of the fact that when the action space is continuous, the (optimal) action-value function is differentiable with respect to the action variable. Using this, a gradient-based learning rule for a policy can be constructed, as below.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/AB.png" alt="DDPG Main Equation" style="zoom:67%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/AB.png" alt="DDPG Main Equation" style="max-width:100%;" /></center>
 
 
 The gradient values are then used to update the Q-function and the policy. Here, soft-updating is used to ensure that the updating procedure retains some stability.
 
 The overview of the DDPG algorithm in the form of pseudocode is provided below.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/B.png" alt="DDPG Algorithm Pseudocode" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/B.png" alt="DDPG Algorithm Pseudocode" style="max-width:100%;" /></center>
 
 
 
@@ -195,13 +195,13 @@ Several references have mentioned that DDPG is known to be sensitive to hyperpar
 
 The graphs below show the training results using the above hyperparameter set configurations. 
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/C.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/C.png" alt="" style="max-width:100%;" /></center>
 
 
 
 `last_100_reward_avg` is the moving window average of the last 100 rewards. It is used to smooth out the noise of the graph above.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/D.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/D.png" alt="" style="max-width:100%;" /></center>
 
 The results are subpar. With the exception of very few spikes in the `episode_reward`, none of the episode runs have achieved net positive return/profit. According to Fujimoto et al. (2018), there is inherently an overestimation bias in Actor-Critic methods where the policy is updated using a deterministic policy gradient, leading to biased--and thus suboptimal--policies. 
 
@@ -222,11 +222,11 @@ Using the above modifications have effectively addressed the value overestimatio
 
 **Table: Max Average Return over 10 trials of 1 million time steps (Fujimoto et al., 2018)**
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/E.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/E.png" alt="" style="max-width:100%;" /></center>
 
 
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/F.png" alt="" style="zoom:60%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/F.png" alt="" style="max-width:100%;" /></center>
 
 
 
@@ -251,19 +251,19 @@ In a fashion similar to how DDPG was approached, plateau detection and grid-base
 
 Below are the results of training using varying sets of hyperparameters. The number of curves on the graph below coincide with that of the combinations of hyperparameters selected for this study. Each dot on the curve represents a completed episode of the simulation run.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/G.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/G.png" alt="" style="max-width:100%;" /></center>
 
 `best_reward_so_far` graph visualizes the maximum episodic total reward gained from an episode as the SAC algorithm proceeds with the training. As expected, the graphs are monotonically increasing.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/H.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/H.png" alt="" style="max-width:100%;" /></center>
 
 Zooming into the positive rewards, we have the following graph. The maximum reward we have here is **$1406/ha**. The instance that gave the result is 
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/I.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/I.png" alt="" style="max-width:100%;" /></center>
 
 The graph below shows a smoothed version of the `Reward` graph shown above. The smoothing was done using an average moving window of size 100. 
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/J.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/J.png" alt="" style="max-width:100%;" /></center>
 
 
 Securing a positive reward, which I was not able to with DDPG, is an improvement. However, at this stage I learned that there is an algorithm called SAC that takes on a more general form than TD3. I decided that if TD3 is a special case of SAC, then it would be more time-efficient to include TD3’s results while conducting the hyperparameter search for SAC. 
@@ -283,7 +283,7 @@ Other notable features of SAC is that it 1) takes on an actor-critic structure w
 
 The SAC algorithm’s pseudocode is provided below for reference.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/K.png" alt="" style="zoom:60%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/K.png" alt="" style="max-width:100%;" /></center>
 
 
 ### Implementation & Results
@@ -307,11 +307,11 @@ The above instance is selected as the final result for this project.
 
 `last_100_reward_avg` is the moving window average of the last 100 rewards.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/N.png" alt="" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/N.png" alt="" style="max-width:100%;" /></center>
 
 Below is a graph that helps visualize the key hyperparameters’ influence on one of the key metrics, `best_reward`. SAC has two core hyperparameters that need to be carefully tuned: tau, which determines the rate at which the target networks (both actor and critic) are updated, and reward scale, which acts as the temperature of the energy-based optimal policy, and thus determines the extent of stochasticity of SAC.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/O.png" style="zoom: 50%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/O.png" style="zoom:50%;" /></center>
 
 
 The figure above is color-coded according to the highest reward observed during training. We can visually filter out the best-performing cases to see if a pattern exists among tau and reward scale values, as below.
@@ -341,7 +341,7 @@ It seems that the optimal reward scale value is approximately 13 to 19, while th
 
 **Environment Render of Best-Performing Actions (Profit: $2802.47/ha)**
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/Q.png)
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/Q.png" alt="" style="max-width:100%;" /></center>
 
 
 The above results can be reproduced by running the `check_best_performing_action.py` script. 
