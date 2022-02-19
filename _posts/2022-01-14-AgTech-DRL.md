@@ -119,7 +119,7 @@ Because the SAC algorithm is inherently stochastic, it gives different results e
 
 **Figure: Distribution of Total Episodic Rewards Retrieved from 1,000 Episodes**
 
-<center>!<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" style="zoom:67%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/A.png" style="zoom:80%;" /></center>
 
 
 
@@ -201,7 +201,7 @@ The graphs below show the training results using the above hyperparameter set co
 
 `last_100_reward_avg` is the moving window average of the last 100 rewards. It is used to smooth out the noise of the graph above.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/D.png" alt="DDPG Algorithm Pseudocode" style="zoom:80%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/D.png" alt="" style="zoom:80%;" /></center>
 
 The results are subpar. With the exception of very few spikes in the `episode_reward`, none of the episode runs have achieved net positive return/profit. According to Fujimoto et al. (2018), there is inherently an overestimation bias in Actor-Critic methods where the policy is updated using a deterministic policy gradient, leading to biased--and thus suboptimal--policies. 
 
@@ -222,9 +222,11 @@ Using the above modifications have effectively addressed the value overestimatio
 
 **Table: Max Average Return over 10 trials of 1 million time steps (Fujimoto et al., 2018)**
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/E.png)
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/E.png" alt="" style="zoom:80%;" /></center>
 
-<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/F.png" style="zoom:67%;" />
+
+
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/F.png" alt="" style="zoom:60%;" /></center>
 
 
 
@@ -249,21 +251,19 @@ In a fashion similar to how DDPG was approached, plateau detection and grid-base
 
 Below are the results of training using varying sets of hyperparameters. The number of curves on the graph below coincide with that of the combinations of hyperparameters selected for this study. Each dot on the curve represents a completed episode of the simulation run.
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/G.png)
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/G.png" alt="" style="zoom:60%;" /></center>
 
 `best_reward_so_far` graph visualizes the maximum episodic total reward gained from an episode as the SAC algorithm proceeds with the training. As expected, the graphs are monotonically increasing.
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/H.png)
-
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/H.png" alt="" style="zoom:60%;" /></center>
 
 Zooming into the positive rewards, we have the following graph. The maximum reward we have here is **$1406/ha**. The instance that gave the result is 
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/I.png)
-
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/I.png" alt="" style="zoom:60%;" /></center>
 
 The graph below shows a smoothed version of the `Reward` graph shown above. The smoothing was done using an average moving window of size 100. 
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/J.png)
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/J.png" alt="" style="zoom:60%;" /></center>
 
 
 Securing a positive reward, which I was not able to with DDPG, is an improvement. However, at this stage I learned that there is an algorithm called SAC that takes on a more general form than TD3. I decided that if TD3 is a special case of SAC, then it would be more time-efficient to include TD3’s results while conducting the hyperparameter search for SAC. 
@@ -283,20 +283,19 @@ Other notable features of SAC is that it 1) takes on an actor-critic structure w
 
 The SAC algorithm’s pseudocode is provided below for reference.
 
-<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/K.png" style="zoom:67%;" />
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/K.png" alt="" style="zoom:60%;" /></center>
 
 
 ### Implementation & Results
 
 Below are the results of training using varying sets of hyperparameters. The number of curves on the graph below coincide with that of the combinations of hyperparameters selected for this study. Each dot on the curve represents a completed episode of the simulation run.
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/L.png)
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/L.png" alt="" style="zoom:60%;" /></center>
 
 
 `best_reward_so_far` graph visualizes the maximum episodic total reward gained from an episode as the SAC algorithm proceeds with the training. As expected, the graphs are monotonically increasing.
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/M.png)
-
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/M.png" alt="" style="zoom:60%;" /></center>
 
 Maximum one-time reward value from ‘best_reward_so_far’ graph is $2862/ha, and the unique identifier/name for the trial is:
 
@@ -308,17 +307,16 @@ The above instance is selected as the final result for this project.
 
 `last_100_reward_avg` is the moving window average of the last 100 rewards.
 
-![](https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/N.png)
-
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/N.png" alt="" style="zoom:60%;" /></center>
 
 Below is a graph that helps visualize the key hyperparameters’ influence on one of the key metrics, `best_reward`. SAC has two core hyperparameters that need to be carefully tuned: tau, which determines the rate at which the target networks (both actor and critic) are updated, and reward scale, which acts as the temperature of the energy-based optimal policy, and thus determines the extent of stochasticity of SAC.
 
-<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/O.png" style="zoom: 50%;" />
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/O.png" style="zoom: 50%;" /></center>
 
 
 The figure above is color-coded according to the highest reward observed during training. We can visually filter out the best-performing cases to see if a pattern exists among tau and reward scale values, as below.
 
-<img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/P.png" style="zoom:50%;" />
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/P.png" style="zoom:50%;" /></center>
 
 
 It seems that the optimal reward scale value is approximately 13 to 19, while the tau value varies over a wider range. Taking the hyperparameter set that had the highest single-episode total reward (profit) value, we have below:
