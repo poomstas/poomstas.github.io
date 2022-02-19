@@ -226,7 +226,7 @@ Using the above modifications have effectively addressed the value overestimatio
 
 
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/F.png" alt="" style="max-width:100%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/F.png" alt="" style="max-width:50%;" /></center>
 
 
 
@@ -283,7 +283,7 @@ Other notable features of SAC is that it 1) takes on an actor-critic structure w
 
 The SAC algorithm’s pseudocode is provided below for reference.
 
-<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/K.png" alt="" style="max-width:100%;" /></center>
+<center><img src="https://github.com/poomstas/AgTech_DRL/raw/main/README_Figures/K.png" alt="" style="max-width:50%;" /></center>
 
 
 ### Implementation & Results
@@ -371,6 +371,8 @@ In this work, I was find the set of control variables for the PCSE crop simulati
 ------------------
 
 ## Running the Scripts
+
+Check out the GitHub repo here: [github.com/poomstas/AgTech_DRL](github.com/poomstas/AgTech_DRL)
 
 ### Create a Conda Environment
 
