@@ -8,21 +8,23 @@ image: "/images/MCTS_2048_thumbnail.png"
 
 ---
 
-# Applying Monte Carlo Tree Search (MCTS) to Solve the 2048 Puzzle
-
 ## Objective / Problem Statement
 
 Create an agent that solves the 2048 puzzle. In this work, I employ the Monte-Carlo Tree Search (MCTS) algorithm to achieve this objective.
 
 The meta-objective is for me to learn how the algorithm works, and practice implementing it on a fun problem :)
 
+-----------------
+
 ## The 2048 Game
 
-2048 is a simple board game. As shown below, the board has 4x4 squares, some of which are occupied by number blocks. The player can press one of the four (up, down, left, right) arrows to shift the blocks in the specified direction. Adjacent blocks with the same number will add together, combining into one block with a value of the two blocks' values added together. If the adjacent blocks do not have the same number, then they will not combine.
+2048 is a simple board game. As shown above, the board has 4x4 squares, some of which are occupied by number blocks. The player can press one of the four (up, down, left, right) arrows to shift the blocks in the specified direction. Adjacent blocks with the same number will add together, combining into one block with a value of the two blocks' values added together. If the adjacent blocks do not have the same number, then they will not combine.
 
 The game is considered solved if the largest number on the grid reaches 2048, hence the name. The game terminates unsuccessfully if, after an action is taken and a new block is added, there are no empty blocks left and there are no valid moves available.
 
 Play and get a sense of it [here](https://play2048.co/).
+
+------------------
 
 ## The Monte Carlo Tree Search (MCTS) Algorithm
 
@@ -41,7 +43,7 @@ Each state carries with it an estimate of value that is calculated using Monte C
 
 Selection process points the algorithm to which action is likely to be worth exploring. It takes the current state of the tree and selects decisions down that tree to a future state at a fixed depth. The relative value of different nodes are determined using the UCB equation (explained below), which systematically incorporates both the observed average returns and the uncertainty associated with the estimated average.
 
-```
+```python
         # Select
         while node.untried_moves==[] and node.child_nodes!=[]: # Node is fully expanded and non-terminal
             node = node.select_child_UCT(C=exploration_const)
@@ -104,6 +106,8 @@ Through the above four stages, we can take decisions to a fixed point in the tre
             node = node.parent_node
 ```
 
+---------------------------
+
 ## Why MCTS for 2048?
 
 The 2048 game follows a Markov decision process. Specifically, it is a discrete-time and discrete-action stochastic control problem.
@@ -116,7 +120,9 @@ The above properties make MCTS an appropriate choice for the 2048 game.
 
 Note that the MCTS is not the only algorithm that is suitable for solving 2048. Minimax, for instance, is a noteworthy alternative. But here we only deal with MCTS.
 
-# MCTS Hyperparameters
+------------------
+
+## MCTS Hyperparameters
 
 The main hyperparameters of the MCTS algorithm are: `nSearchPath`, `nSearchDepth`, and `explorationConst`, specifying the number of search paths, the depth of search, and the exploration constant. These hyperparameters together determine the tradeoff between exploration and exploitation.
 
@@ -126,20 +132,26 @@ For this work, I have used the values below, and verified that the combination o
 | ----------- | ------------ | ------------------ |
 | 50          | 5            | 100                |
 
-# Results
+-----------------
+
+## Results
 
 Running an instance of `MCTS.py` script will initialize a MCTS algorithm and attempt to solve a game of 2048. Below is an example of a successful run where the algorithm was able to reach 2048 before terminating.
 
 <center><img src="https://github.com/poomstas/2048_MCTS/raw/main/readme_img/Z_WonGame.png" alt="Won Game" style="max-width:80%;" /></center>
 
-# Observations
+---------------
+
+## Observations
 
 - I could probably do just as well with fewer search paths and depths at the beginning. When a new game begins and there are many empty cells in the grid, there is almost always no action that would either make the player lose the game, or put him at a significant disadvantage in the subsequent states. It is only when the majority of the grid cells are filled up that choosing an optimal action starts to become more critical. Adjusting the algorithm for this observation would make it more computationally efficient. It may even be possible to simply sample randomly from the available four (or fewer) actions until a certain fraction of grid cells are occupied, after which the algorithm would compute MCTS with adjusted search hyperparameter values.
 - However, when there are many empty cells because the game has recently reached a high number (e.g. 1024), then the player needs to be more cautious in selecting the next set of actions. The above observation only applies at the very beginning of the game.
 - In a similar sense, I can adaptively adjust (i.e. increase) the number of search paths as the game progresses. This is also because I can computationally afford to search a lot more in the later stages because each simulation doesn't run as long until the game reaches terminal state (expand and rollout stages).
 - It is interesting that when I play the game, I tend to approach it more like a Markov model than this algorithm does, i.e. only considering the next one or two steps. I tend to resort to simple heuristics than to simulate multiple alternatives in my head to estimate the optimal action.
 
-# References
+------------------------
+
+## References
 
 Cameron B. Browne, Edward Powley, Daniel Whitehouse, Simon M. Lucas, Peter I. Cowling, Philipp Rohlfshagen, Stephen Tavener, Diego Perez, Spyridon Samothrakis, Simon Colton (2012). A Survey of Monte Carlo Tree Search Methods. *IEEE TRANSACTIONS ON COMPUTATIONAL INTELLIGENCE AND AI IN GAMES*, *4*(1), 1–43. https://doi.org/10.1109/TCIAIG.2012.2186810
 
