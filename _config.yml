@@ -22,7 +22,7 @@ phone:              82-10-3368-6481
 email:              b.lee@utexas.edu
 
 # Other
-background_image:   /images/bg2_rotate_lowres_lower.jpg
+background_image:   /images/bg2_rotate_lowres_lower.jpeg
 # Tip: The color palette and other styles can be configured in /_sass/lib/_vars.scss
 slapform_thankyou_page: /thank-you
 
