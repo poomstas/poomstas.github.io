@@ -4,7 +4,7 @@ title:  "Solving Blackjack with Q-Learning"
 date:   2022-02-22
 excerpt: "Optimizing growth conditions using a crop simulator and Deep Reinforcement Learning (DRL)"
 image: "/images/Agriculture4.jpg"
-published: false
+published: true
 
 ---
 
