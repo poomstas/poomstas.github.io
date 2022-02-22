@@ -32,21 +32,25 @@
       			<div class="image main"><img src="{{page.image}}" alt=""></div>
 
 				<p>
-				{% if page.tags %}
-					{% for tag in page.tags %}
-					  <span class="tag">{{ tag }}</span>
-					{% endfor %}
-				  {% endif %}
+					{% if page.tags %}
+  						{% for tag in page.tags %}
+    						{% if site.data.tags contains tag %}
+      						<span class="tag">{{ site.data.format[tag] }}</span>
+    						{% endif %}
+  						{% endfor %}
+					{% endif %}
 				</p>
 
       			<p>{{content}}</p>
 
 				<p>
-				{% if page.tags %}
-					{% for tag in page.tags %}
-					  <span class="tag">{{ tag }}</span>
-					{% endfor %}
-				  {% endif %}
+					{% if page.tags %}
+  						{% for tag in page.tags %}
+    						{% if site.data.tags contains tag %}
+      						<span class="tag">{{ site.data.format[tag] }}</span>
+    						{% endif %}
+  						{% endfor %}
+					{% endif %}
 				</p>
 
       		</section>
