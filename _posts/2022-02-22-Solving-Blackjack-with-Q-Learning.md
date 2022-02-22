@@ -2,9 +2,9 @@
 layout: post
 title:  "Solving Blackjack with Q-Learning"
 date:   2022-02-22
-excerpt: "Optimizing growth conditions using a crop simulator and Deep Reinforcement Learning (DRL)"
+excerpt: "We’ll teach an innocent puppy how to realize his dream of becoming a billionnaire mogul by training it to play BlackJack."
 image: "/images/Agriculture4.jpg"
-published: true
+published: false
 
 ---
 
