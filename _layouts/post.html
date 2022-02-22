@@ -30,7 +30,25 @@
       				<p>{{page.excerpt}}</p>
       			</header>
       			<div class="image main"><img src="{{page.image}}" alt=""></div>
+
+				<p>
+				{% if page.tags %}
+					{% for tag in page.tags %}
+					  <span class="tag">{{ tag }}</span>
+					{% endfor %}
+				  {% endif %}
+				</p>
+
       			<p>{{content}}</p>
+
+				<p>
+				{% if page.tags %}
+					{% for tag in page.tags %}
+					  <span class="tag">{{ tag }}</span>
+					{% endfor %}
+				  {% endif %}
+				</p>
+
       		</section>
 
 					<!-- Footer -->
