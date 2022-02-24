@@ -4,8 +4,9 @@ title:  "Deep Reinforcement Learning + AgTech"
 date:   2022-01-14
 excerpt: "Optimizing growth conditions using a crop simulator and Deep Reinforcement Learning (DRL)"
 image: "/images/Agriculture4.jpg"
-tags: [reinforcementlearning, agtech]
-
+tags:
+    - reinforcementlearning
+    - agtech
 ---
 
 ### Problem Statement and Overview
