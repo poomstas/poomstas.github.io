@@ -4,6 +4,17 @@ title: About Brian
 description: Let's see what this guy's about.
     changefreq: weekly
 ---
+## Education
+University of Texas at Austin
+BS, MS, PhD
+Petroleum and Geosystems Engineering
+
+Post PhD Dissertation here?
+
+## Experience
+Smart Farm
+Medical AI
+
 ## Lorem Ipsum Dolor
 
 <span class="image left"><img src="{{ "/images/pic04.jpg" | absolute_url }}" alt="" /></span>
@@ -13,6 +24,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
 
 ### Dignissimos Duciumus
+## An Avid Guitar Player
+
+
 <div class="box">
   <p>
   At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
