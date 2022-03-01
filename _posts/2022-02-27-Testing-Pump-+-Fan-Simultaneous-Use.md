@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Smart Farm Project #1"
+title:  "Smart Farm Project: Post #1"
 date:   2022-02-27
 excerpt: "Relay to Control a Fan and a Water Pump"
 image: "/images/20220301_testing_fan_pump/thumbnail_testing_fan_pump.png"
@@ -94,6 +94,8 @@ try:
 finally:
     GPIO.cleanup()
 ```
+
+In the code above, the `GPIO.cleanup()` method call ensures a clean exit. It’s important to remember, though, that it only cleans up all the ports that you’ve set in the current program. For more information on Raspberry Pi's GPIO port cleanups, see [this link](https://raspi.tv/2013/rpi-gpio-basics-3-how-to-exit-gpio-programs-cleanly-avoid-warnings-and-protect-your-pi).
 
 Measuring the voltages across the water pump, I saw about 0.2V drop when the fans were turning on. The flow rates did not seem to be affected too much, though. 
 
