@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Testing Pump + Fan Simultaneous Use"
+title:  "Smart Farm Project #1"
 date:   2022-02-27
-excerpt: "Let's see if a batterpack can power both the pump and the fan simultaneously."
+excerpt: "Relay to Control a Fan and a Water Pump"
 image: "/images/20220301_testing_fan_pump/thumbnail_testing_fan_pump.png"
 published: true
 
@@ -22,9 +22,15 @@ For the relay setup, I used a 2-channel relay with a jumper to connect the `JD-V
 
 For more information on using relays, I include below a couple of videos that were the most informative.
 
-<iframe width="480" height="360" src="https://www.youtube.com/embed/d9evR-K6FAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
 
-<iframe width="480" height="360" src="https://www.youtube.com/embed/kfPzXbhTQQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/d9evR-K6FAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/kfPzXbhTQQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</center>
+
+
 
 
 
