@@ -22,9 +22,11 @@ For the relay setup, I used a 2-channel relay with a jumper to connect the `JD-V
 
 For more information on using relays, I include below a couple of videos that were the most informative.
 
-https://www.youtube.com/watch?v=d9evR-K6FAY
+```html
+<iframe width="420" height="315" src="https://www.youtube.com/watch?v=d9evR-K6FAY" frameborder="0" allowfullscreen></iframe>
+```
 
-https://youtu.be/kfPzXbhTQQk
+<iframe width="420" height="315" src="https://youtu.be/kfPzXbhTQQk" frameborder="0" allowfullscreen></iframe>
 
 
 
