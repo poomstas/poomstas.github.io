@@ -22,17 +22,17 @@ For the relay setup, I used a 2-channel relay with a jumper to connect the `JD-V
 
 For more information on using relays, I include below a couple of videos that were the most informative.
 
-```html
-<iframe width="420" height="315" src="https://www.youtube.com/watch?v=d9evR-K6FAY" frameborder="0" allowfullscreen></iframe>
-```
+<iframe width="480" height="360" src="https://www.youtube.com/embed/d9evR-K6FAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe width="420" height="315" src="https://youtu.be/kfPzXbhTQQk" frameborder="0" allowfullscreen></iframe>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/kfPzXbhTQQk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
 The physical configuration looks like below. I've converted a shoe box lid into a test bench for the hardware.
 
 <center><img src="https://github.com/poomstas/poomstas.github.io/blob/master/images/20220301_testing_fan_pump/test_bench.jpg?raw=true" alt="" style="max-width:100%;" /></center>
+
+
 
 
 
