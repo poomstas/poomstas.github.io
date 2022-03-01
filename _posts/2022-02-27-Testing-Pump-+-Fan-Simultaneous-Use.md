@@ -34,7 +34,7 @@ For more information on using relays, I include below a couple of videos that we
 
 
 
-The physical configuration looks like below. I've converted a shoe box lid into a test bench for the hardware.
+The physical configuration of my setup looks like below. I've converted a shoe box lid into a test bench for the hardware.
 
 <center><img src="https://github.com/poomstas/poomstas.github.io/blob/master/images/20220301_testing_fan_pump/test_bench.jpg?raw=true" alt="" style="max-width:100%;" /></center>
 
