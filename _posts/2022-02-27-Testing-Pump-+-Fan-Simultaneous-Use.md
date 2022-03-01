@@ -16,7 +16,7 @@ Because my knowledge in electronics is very limited, I will be taking a very pra
 
 Anyways, the circuit diagram looks like below. I used Fritzing to make these diagrams; they are pretty easy to use.
 
-**![circuit_diagram](../images/20220301_testing_fan_pump/circuit_diagram.png)**
+**![circuit_diagram](https://github.com/poomstas/poomstas.github.io/blob/master/images/20220301_testing_fan_pump/circuit_diagram.png?raw=true)**
 
 For the relay setup, I used a 2-channel relay with a jumper to connect the `JD-VCC` with `VCC`. This effectively allows the relay controls to be powered by the Raspberry Pi. This is ill-advised for the cases where the power going through the relay channels is high because the Raspberry Pi's circuit are not completely isolated, and runs the risk of Raspberry Pi being exposed to the high current going through the relay in case anything goes wrong. For my case, it should be fine because the devices controlled by the relay are powered using a small, low-voltage (<12V) battery pack.
 
@@ -30,7 +30,7 @@ https://youtu.be/kfPzXbhTQQk
 
 The physical configuration looks like below. I've converted a shoe box lid into a test bench for the hardware.
 
-![pump_specs](../images/20220301_testing_fan_pump/test_bench.jpg)
+![pump_specs](https://github.com/poomstas/poomstas.github.io/blob/master/images/20220301_testing_fan_pump/test_bench.jpg?raw=true)
 
 
 
@@ -38,13 +38,13 @@ The physical configuration looks like below. I've converted a shoe box lid into 
 
 The specs for the water pump and the fan are:
 
-![pump_specs](../images/20220301_testing_fan_pump/pump_specs.png)
+![pump_specs](https://github.com/poomstas/poomstas.github.io/blob/master/images/20220301_testing_fan_pump/pump_specs.png?raw=true)
 
-![fan_specs](../images/20220301_testing_fan_pump/fan_specs.jpg)
+![fan_specs](https://github.com/poomstas/poomstas.github.io/blob/master/images/20220301_testing_fan_pump/fan_specs.jpg?raw=true)
 
 And for the battery pack, I used 8 AA Eneloop rechargeable batteries (It has 4 more AA batteries below):
 
-![battery_pack](../images/20220301_testing_fan_pump/battery_pack.jpg)
+![battery_pack](https://github.com/poomstas/poomstas.github.io/blob/master/images/20220301_testing_fan_pump/battery_pack.jpg?raw=true)
 
 
 
