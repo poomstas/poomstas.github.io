@@ -2,7 +2,7 @@
 layout: post
 title:  "Smart Farm Project: Post #1"
 date:   2022-02-27
-excerpt: "Relay to Control a Fan and a Water Pump"
+excerpt: "Use a Relay to Control a Fan and a Water Pump"
 image: "/images/20220301_testing_fan_pump/thumbnail_testing_fan_pump.png"
 published: true
 
@@ -60,7 +60,9 @@ And for the battery pack, I used 8 AA Eneloop rechargeable batteries (It has 4 m
 
 I wrote the following code to keep the water pump on, while alternating the relay switch for the fan in 5 second increments. I then used a multimeter to measure the voltage across the water pump to see how much the fan use affects the power delivered to the pump.
 
+
 ```python
+{% highlight python %}
 '''
 Turn on the water pump, and alternate the fan switch in 5 second intervals.
 This is to check if the power supplied to the water pump is affected by the fan turning on. 
@@ -93,7 +95,9 @@ try:
         time.sleep(5)
 finally:
     GPIO.cleanup()
+{% endhighlight %}
 ```
+
 
 In the code above, the `GPIO.cleanup()` method call ensures a clean exit. It’s important to remember, though, that it only cleans up all the ports that you’ve set in the current program. For more information on Raspberry Pi's GPIO port cleanups, see [this link](https://raspi.tv/2013/rpi-gpio-basics-3-how-to-exit-gpio-programs-cleanly-avoid-warnings-and-protect-your-pi).
 
