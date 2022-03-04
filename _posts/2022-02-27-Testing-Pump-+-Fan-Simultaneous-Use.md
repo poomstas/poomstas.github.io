@@ -12,6 +12,8 @@ published: true
 
 As a part of my small-scale smart farm project, I have multiple hardware items that are controlled by a Raspberry Pi. In my current setup, I have a pump and a fan. They are both powered by the battery pack, and are controlled separately by a 2-channel relay.
 
+Maintaining the correct flowrate for the water pump is important because the amount of water given to the plant will be an estimate made using the volumetric flowrate and the duration of pump operation. It is imperative that any other operation (i.e. fan use) does not interfere with the flowrate of the pump. This test is to make sure that the flowrate remains consistent throughout (if it is affected, I will have to make an alternative design).
+
 Because my knowledge in electronics is very limited, I will be taking a very pragmatic, experience-oriented approach to designing my smart farm. The plan is to put together a functional smart farm first, and incrementally improve it as I slowly expand my understanding of relevant subjects like electronics, control systems, plant physiology, and frontend/backend development. It's all for the fun of learning. If you're reading this and see how I could improve, please feel free to let me know :)
 
 Anyways, the circuit diagram looks like below. I used Fritzing to make these diagrams; they are pretty easy to use.
