@@ -72,3 +72,25 @@ Credits:
 		Skel (skel.io)
 		Scrollex (github.com/ajlkn/jquery.scrollex)
 ```
+
+## Jekyll Installation (Verified, working for MacOS)
+`brew install ruby@2.7` # This is key. Ruby 3.x won't work!
+
+`echo 'export PATH="/usr/local/opt/ruby@2.7/bin:$PATH"' >> /Users/Brian/.bash_profile`
+
+`echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.0/bin:$PATH"' >> ~/.bash_profile`
+
+`source ~/.bash_profile`
+
+`gem install --user-install bundler jekyll`
+
+`echo 'export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"' >> ~/.bash_profile`
+
+`source ~/.bash_profile`
+
+`gem install bundler:1.16.2`
+
+`bundle install`
+
+Go to the github repo directory, and run: `bundle exec jekyll serve`
+
