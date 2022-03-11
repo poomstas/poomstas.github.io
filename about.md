@@ -6,14 +6,32 @@ description: Let's see what this guy's about.
 ---
 ## Education
 University of Texas at Austin
-BS, MS, PhD
+
+B.S., M.S., Ph.D.
+
 Petroleum and Geosystems Engineering
 
-Post PhD Dissertation here?
+Cockrell School of Engineering
 
 ## Experience
-Smart Farm
-Medical AI
+Computer Vision Engineer at a Medical AI Startup (Pangyo, Republic of Korea)
+
+Data Scientist and Computer Vision Engineer at a Agricultural Tech (AgTech) Startup (Daejeon, Republic of Korea)
+
+Summer Intern at an Oil & Gas Consulting Company (Houston, TX)
+
+Assistant Instructor at the Department of Civil, Architectural and Environmental Engineering, UT Austin (Austin, TX)
+
+## Interests
+Deep Reinforcement Learning
+
+Computer Vision
+
+Decision Analysis
+
+AgTech
+
+Oil & Gas
 
 ## Lorem Ipsum Dolor
 
